@@ -1,10 +1,13 @@
+def pour_water(level):
+	if get_water() <= level:
+		use_item(Items.Water)
+
 while True:
 	if can_harvest():
 		if num_items(Items.Hay) <= 500:
 			for i in range(get_world_size()):
 				
-				if get_water() <= 0.50:
-					use_item(Items.Water)
+				pour_water(0.5)
 				
 				harvest()
 				if get_ground_type() != Grounds.Grassland:
@@ -15,8 +18,7 @@ while True:
 		elif num_items(Items.Wood) <= 500:
 			for i in range(get_world_size()):
 					
-				if get_water() <= 0.50:
-					use_item(Items.Water)
+				pour_water(0.5)
 				
 				harvest()
 				if get_ground_type() != Grounds.Grassland:
@@ -28,8 +30,7 @@ while True:
 		else:
 			for i in range(get_world_size()):
 				
-				if get_water() <= 0.50:
-					use_item(Items.Water)
+				pour_water(0.5)
 				
 				harvest()
 				if get_ground_type() != Grounds.Soil:
@@ -37,5 +38,4 @@ while True:
 				plant(Entities.Carrot)
 				move(North)
 			move(East)
-			
 			
