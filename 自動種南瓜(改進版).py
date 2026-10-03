@@ -33,7 +33,7 @@ def pour_water(level):
 		use_item(Items.Water)
 def plant_crop(entities, ground_type):
 		pour_water(0.5)
-		use_item(Items.Weird_Substance)
+		use_item(Items.Fertilizer)
 		harvest()
 		current_crop = entities
 		if get_ground_type() != ground_type:
@@ -42,8 +42,8 @@ def plant_crop(entities, ground_type):
 			plant(Entities.Bush)
 			return
 		plant(entities)
-		if entities == Entities.Pumpkin:
-			use_item(Items.Fertilizer)
+		#if entities == Entities.Pumpkin:
+			#use_item(Items.Fertilizer)
 def check_pumpkin_is_healthy(direction):
 	while True:
 		if get_entity_type() == Entities.Dead_Pumpkin:
